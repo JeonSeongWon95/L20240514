@@ -21,30 +21,40 @@ int main ()
 	int PlayerY = 1;
 	int GoalX = 8;
 	int GoalY = 8;
-	
-	for (int Line = 0; Line < 10; ++Line)
+	char Key = 0;
+	for (;;)
 	{
-		for (int Count = 0; Count < 10; ++Count)
+		for (int Line = 0; Line < 10; ++Line)
 		{
-			if(PlayerX == Count && PlayerY == Line)
+			for (int Count = 0; Count < 10; ++Count)
 			{
-				cout << "P";
+				if (PlayerX == Count && PlayerY == Line)
+				{
+					cout << "P";
+				}
+				else if (GoalX == Count && GoalY == Line)
+				{
+					cout << "G";
+				}
+				else if (Screen[Line][Count] == 0)
+				{
+					cout << " ";
+				}
+				else if (Screen[Line][Count] == 1)
+				{
+					cout << "*";
+				}
+				else {}
 			}
-			else if(GoalX == Count && GoalY == Line)
-			{
-				cout << "G";
-			}
-			else if(Screen[Line][Count] == 0)
-			{
-				cout << " ";
-			}
-			else if (Screen[Line][Count] == 1)
-			{
-				cout << "*";
-			}
-			else {}
+			cout << endl;
 		}
-		cout << endl;
+		cin >> Key;
+
+		if (Key == 'w') { PlayerY--; }
+		else if (Key == 's') { PlayerY++; }
+		else if (Key == 'a') { PlayerX--; }
+		else if (Key == 'd') { PlayerX++; }
+
 	}
 
 	return 0;

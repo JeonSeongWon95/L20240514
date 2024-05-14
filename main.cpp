@@ -19,8 +19,8 @@ int main ()
 	};
 	int PlayerX = 1;
 	int PlayerY = 1;
-	int MonsterX = 8;
-	int MonsterY = 8;
+	int GoalX = 8;
+	int GoalY = 8;
 	
 	for (int Line = 0; Line < 10; ++Line)
 	{
@@ -30,7 +30,7 @@ int main ()
 			{
 				cout << "P";
 			}
-			else if(MonsterX == Count && MonsterY == Line)
+			else if(GoalX == Count && GoalY == Line)
 			{
 				cout << "G";
 			}

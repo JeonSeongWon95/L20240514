@@ -17,11 +17,13 @@ int main ()
 		{1, 0, 0, 0, 0, 1, 0, 0, 0, 1},
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 	};
+
 	int PlayerX = 1;
 	int PlayerY = 1;
 	int GoalX = 8;
 	int GoalY = 8;
 	char Key = 0;
+
 	for (;;)
 	{
 		for (int Line = 0; Line < 10; ++Line)
@@ -50,10 +52,27 @@ int main ()
 		}
 		cin >> Key;
 
-		if (Key == 'w') { PlayerY--; }
-		else if (Key == 's') { PlayerY++; }
-		else if (Key == 'a') { PlayerX--; }
-		else if (Key == 'd') { PlayerX++; }
+		if (Key == 'w') 
+		{ 
+			PlayerY--; 
+		}
+		else if (Key == 's') 
+		{ 
+			PlayerY++; 
+		}
+		else if (Key == 'a') 
+		{ 
+			PlayerX--; 
+		}
+		else if (Key == 'd') 
+		{ 
+			PlayerX++; 
+		}
+
+		if(PlayerX == GoalX && PlayerY == GoalY)
+		{
+			cout << "Escape";
+		}
 
 	}
 
